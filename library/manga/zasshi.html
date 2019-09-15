@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="../../css/gridtop2.css" title="default">
 <link rel="alternate stylesheet" href="../../css/night.css" title="alternate">
 <script type="text/javascript" src="../../js/styleswitcher.js"></script>
+<script type="text/javascript" src="../../js/lazyloader.min.js"></script>
 </head>
 <body>
 <a id="top"></a>
@@ -2395,7 +2396,7 @@
 <div class="tile yellow"><a href="series/魂の剣.html"><img class="lazyload" src="../../background/loading.png" data-lazy="thumbnails/魂の剣.jpg" width="200" height="300"></a>魂の剣<br>竹内海四郎＆刃森尊</div>
 <div class="tile yellow"><a href="series/格闘料理人ムサシ.html"><img class="lazyload" src="../../background/loading.png" data-lazy="thumbnails/格闘料理人ムサシ.jpg" width="200" height="300"></a>格闘料理人ムサシ<br>刃森尊</div>
 <div class="tile yellow"><a href="series/HiGH&LOW g-sword.html"><img class="lazyload" src="../../background/loading.png" data-lazy="thumbnails/HiGH&LOW g-sword.jpg" width="200" height="300"></a>HiGH&LOW g-sword<br>CLAMP＆HI-AX</div>
-<div class="tile green"><a href="series/金田一少年の事件簿.html"><img class="lazyload" src="../../background/loading.png" data-lazy="thumbnails/金田一少年の事件簿.jpg" width="200" height="300"></a>金田一少年の事件簿<br>さとうふみや＆天木征丸</div>
+<div class="tile green"><a href="series/金田一少年の事件簿.html"><img class="lazyload" src="../../background/loading.png" data-lazy="thumbnails/金田一少年の事件簿.jpg" width="200" height="300"></a>金田一少年の事件簿 第I期<br>さとうふみや＆天木征丸</div>
 <div class="tile yellow"><a href="series/スーパードクターK.html"><img class="lazyload" src="../../background/loading.png" data-lazy="thumbnails/スーパードクターK.jpg" width="200" height="300"></a>スーパードクターK<br>真船一雄</div>
 <div class="tile yellow"><a href="series/風のシルフィード.html"><img class="lazyload" src="../../background/loading.png" data-lazy="thumbnails/風のシルフィード.jpg" width="200" height="300"></a>風のシルフィード<br>本島幸久</div>
 <div class="tile yellow"><a href="series/クニミツの政.html"><img class="lazyload" src="../../background/loading.png" data-lazy="thumbnails/クニミツの政.jpg" width="200" height="300"></a>クニミツの政<br>朝基まさし</div>
@@ -3253,35 +3254,5 @@
 <div style="clear:both;"></div>
 <a id="backtop" href="#top">&#9650;</a>
 <div class="ashi"></div>
-<script>
-var thumbs = document.getElementsByClassName('lazyload');
-
-function loadImages() {
-    for (let i = thumbs.length - 1; i >= 0; i--) {
-
-        // Check for visibility.
-        if (!!!(thumbs[i].offsetWidth || thumbs[i].offsetHeight || thumbs[i].getClientRects().length)) {
-            continue;
-        }
-
-        let elemTop = thumbs[i].getBoundingClientRect().top;
-        let elemBottom = thumbs[i].getBoundingClientRect().bottom;
-
-        if (elemTop < window.innerHeight + 800 && elemBottom >= 0) {
-            thumbs[i].src = thumbs[i].dataset.lazy;
-            thumbs[i].classList.remove('lazyload');
-        }
-    }
-}
-
-loadImages();
-
-document.addEventListener("scroll", loadImages, false)
-document.getElementById('reset').addEventListener("click", loadImages, false);
-document.getElementById('blue').addEventListener("click", loadImages, false);
-document.getElementById('yellow').addEventListener("click", loadImages, false);
-document.getElementById('green').addEventListener("click", loadImages, false);
-document.getElementById('red').addEventListener("click", loadImages, false);
-</script>
 </body>
 </html>

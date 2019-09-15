@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="../../css/gridtop2.css" title="default">
 <link rel="alternate stylesheet" href="../../css/night.css" title="alternate">
 <script type="text/javascript" src="../../js/styleswitcher.js"></script>
+<script type="text/javascript" src="../../js/lazyloader.min.js"></script>
 </head>
 <body>
 <a id="top"></a>
@@ -487,7 +488,7 @@
 <div class="tile green"><a href="series/ゼロ エンジェル 爽碧の堕天使.html"><img class="lazyload" src="../../background/loading.png" data-lazy="thumbnails/ゼロ エンジェル 爽碧の堕天使.jpg" width="200" height="300"></a>ゼロ エンジェル 爽碧の堕天使<br>麻宮騎亜</div>	
 	
 <div style="clear:both;"></div>	
-<div class="purple"><a id="ヤングジャンプコミックス"></a><a class="purple" href="#ヤングジャンプコミックス">ヤングジャンプコミックス</a></div><div class="tile green"><a href="series/かぐや様は告らせたい天才たちの恋愛頭脳戦.html"><img class="lazyload" src="../../background/loading.png" data-lazy="thumbnails/かぐや様は告らせたい天才たちの恋愛頭脳戦.jpg" width="200" height="300"></a>かぐや様は告らせたい天才たちの恋愛頭脳戦<br>赤坂アカ</div>	
+<div class="purple"><a id="ヤングジャンプコミックス"></a><a class="purple" href="#ヤングジャンプコミックス">ヤングジャンプコミックス</a></div><div class="tile green"><a href="series/かぐや様は告らせたい～天才たちの恋愛頭脳戦～.html"><img class="lazyload" src="../../background/loading.png" data-lazy="thumbnails/かぐや様は告らせたい天才たちの恋愛頭脳戦.jpg" width="200" height="300"></a>かぐや様は告らせたい天才たちの恋愛頭脳戦<br>赤坂アカ</div>	
 <div class="tile green"><a href="series/マジンサーガ.html"><img class="lazyload" src="../../background/loading.png" data-lazy="thumbnails/マジンサーガ.jpg" width="200" height="300"></a>マジンサーガ<br>永井豪</div>	
 <div class="tile green"><a href="series/うらたろう.html"><img class="lazyload" src="../../background/loading.png" data-lazy="thumbnails/うらたろう.jpg" width="200" height="300"></a>うらたろう<br>中山敦支</div>	
 <div class="tile green"><a href="series/うずらのカフェで会いましょう.html"><img class="lazyload" src="../../background/loading.png" data-lazy="thumbnails/うずらのカフェで会いましょう.jpg" width="200" height="300"></a>うずらのカフェで会いましょう<br>山本マサユキ</div>	
@@ -692,35 +693,5 @@
 <div style="clear:both;"></div>
 <a id="backtop" href="#top">&#9650;</a>
 <div class="ashi"></div>
-<script>
-var thumbs = document.getElementsByClassName('lazyload');
-
-function loadImages() {
-    for (let i = thumbs.length - 1; i >= 0; i--) {
-
-        // Check for visibility.
-        if (!!!(thumbs[i].offsetWidth || thumbs[i].offsetHeight || thumbs[i].getClientRects().length)) {
-            continue;
-        }
-
-        let elemTop = thumbs[i].getBoundingClientRect().top;
-        let elemBottom = thumbs[i].getBoundingClientRect().bottom;
-
-        if (elemTop < window.innerHeight + 800 && elemBottom >= 0) {
-            thumbs[i].src = thumbs[i].dataset.lazy;
-            thumbs[i].classList.remove('lazyload');
-        }
-    }
-}
-
-loadImages();
-
-document.addEventListener("scroll", loadImages, false)
-document.getElementById('reset').addEventListener("click", loadImages, false);
-document.getElementById('blue').addEventListener("click", loadImages, false);
-document.getElementById('yellow').addEventListener("click", loadImages, false);
-document.getElementById('green').addEventListener("click", loadImages, false);
-document.getElementById('red').addEventListener("click", loadImages, false);
-</script>
 </body>
 </html>
